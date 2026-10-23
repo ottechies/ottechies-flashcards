@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>OTTECHIES Flashcards — Study dashboard</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/setup.css">
+  <!-- Keep your original course-data files in the project root. -->
+  <script defer src="ism_lecture1.js"></script>
+  <script defer src="mis_7102_lecture3.js"></script>
+  <script defer src="ism_chapter1.js"></script>
+  <script defer src="ism_chapter2.js"></script>
+  <script defer src="ism_chapter3.js"></script>
+  <script defer src="ism_chapter4.js"></script>
+  <script defer src="ism_chapter5.js"></script>
+  <script defer src="ism_chapter6.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/setup.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="OTTECHIES Flashcards home">
+    <img src="OTTECHIES (1).jpg" alt="OTTECHIES Logo" class="brand-mark">
+    <span class="brand-copy"><strong>OTECHS</strong><small>FLASHCARDS</small></span>
+  </a>
+    <div class="topbar-actions">
+      <span class="status-chip"><span class="status-dot"></span> Study space</span>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme"><span data-theme-icon>☾</span></button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> LEARN WITH INTENTION</div>
+      <h1>Your next breakthrough<br><span>starts with recall.</span></h1>
+      <p class="hero-copy">Choose a module, focus on one question at a time, and turn what you know into lasting knowledge.</p>
+      <div class="hero-stats">
+        <div><strong>01</strong><span>Choose a module</span></div>
+        <div><strong>02</strong><span>Test your recall</span></div>
+        <div><strong>03</strong><span>Review your progress</span></div>
+      </div>
+    </section>
+
+    <section class="panel setup-panel" aria-labelledby="setup-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">YOUR WORKSPACE</p>
+          <h2 id="setup-title">Set up a study session</h2>
+          <p class="muted">Pick a course and lecture to get started.</p>
+        </div>
+        <span class="section-icon" aria-hidden="true">✳</span>
+      </div>
+
+      <div id="course-list" class="course-list" aria-label="Courses"></div>
+      <p id="course-empty" class="notice" hidden>
+        <strong>No course data found.</strong>
+        Add your original <code>ism_lecture1.js</code> and <code>mis_7102_lecture3.js</code> files beside <code>index.html</code>. They should define <code>window.QUIZ_COURSES</code>, as in your original app.
+      </p>
+
+      <div class="form-grid">
+        <label class="field">
+          <span>Lecture module</span>
+          <select id="lecture-select"><option value="">Select a course first</option></select>
+        </label>
+        <fieldset class="field deck-size-field">
+          <legend>Cards in this session</legend>
+          <div class="choice-row" id="deck-size-options">
+            <button type="button" class="choice-button" data-count="10">10</button>
+            <button type="button" class="choice-button" data-count="20">20</button>
+            <button type="button" class="choice-button" data-count="30">30</button>
+            <button type="button" class="choice-button" data-count="all">All</button>
+          </div>
+        </fieldset>
+      </div>
+      <button id="start-btn" class="primary-button" type="button" disabled>
+        Start study session <span aria-hidden="true">↗</span>
+      </button>
+      <p class="privacy-note"><span aria-hidden="true">◈</span> Your study session runs locally in this browser.</p>
+    </section>
+
+    <footer class="page-footer"><span>OTECHS</span><span>Small steps. Strong memory.</span></footer>
+  </main>
+</body>
+</html>

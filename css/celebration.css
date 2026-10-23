@@ -1,0 +1,14 @@
+ .celebration-overlay { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; overflow: hidden; padding: 20px; background: color-mix(in srgb, var(--bg) 76%, transparent); backdrop-filter: blur(12px); animation: celebrationFade .25s ease both; }
+.celebration-dialog { position: relative; z-index: 2; width: min(440px, 100%); padding: 34px; border: 1px solid var(--border); border-radius: 26px; background: var(--surface); color: var(--text); text-align: center; box-shadow: var(--shadow); animation: celebrationPop .5s cubic-bezier(.2,.8,.2,1) both; }
+.celebration-trophy { display: grid; place-items: center; width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 23px; color: #fff; background: linear-gradient(140deg, #786cf0, #4f45c7); font-size: 32px; }
+.celebration-pill { display: inline-block; padding: 7px 11px; border-radius: 99px; color: var(--green); background: var(--green-soft); font-size: 10px; font-weight: 900; letter-spacing: .12em; }
+.celebration-dialog h2 { margin: 18px 0 9px; font-size: 29px; letter-spacing: -.05em; }
+.celebration-dialog p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.celebration-actions { display: grid; gap: 10px; margin-top: 25px; }
+.celebration-actions button { min-height: 47px; border-radius: 12px; font-weight: 800; font-size: 12px; }
+.celebration-close { border: 1px solid var(--border); color: var(--text); background: var(--surface-soft); }
+.celebration-particle { position: absolute; top: -24px; width: 9px; height: 15px; border-radius: 3px; animation: celebrationFall linear infinite; opacity: .8; }
+@keyframes celebrationFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes celebrationPop { from { opacity: 0; transform: translateY(10px) scale(.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes celebrationFall { to { transform: translateY(110vh) rotate(600deg); } }
+@media (prefers-reduced-motion: reduce) { .celebration-overlay, .celebration-dialog, .celebration-particle { animation-duration: .01ms !important; } }
